@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Window/Inventory/window_inventory.gd" type="Script" id=1]
+[ext_resource path="res://Window/window.tscn" type="PackedScene" id=2]
+
+[node name="WindowInventory" instance=ExtResource( 2 )]
+script = ExtResource( 1 )
+
+[node name="InventoryScrollContainer" type="ScrollContainer" parent="WindowContainer/WindowBackground" index="1"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 36.0
+margin_right = -5.0
+margin_bottom = -10.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemsGridContainer" type="GridContainer" parent="WindowContainer/WindowBackground/InventoryScrollContainer" index="0"]
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="WindowContainer/WindowBackground/InventoryScrollContainer" to="." method="_on_ScrollContainer_gui_input"]

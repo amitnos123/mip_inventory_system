@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Items/Item Drop/item_drop.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Items/Item Test/Item Drop Test/testAnimation.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Items/Item Test/Item Drop Test/item_drop_test_controller.gd" type="Script" id=3]
+
+[node name="ItemDrop" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+
+[node name="Animation" parent="." index="1"]
+position = Vector2( 5.68434e-14, -8.88651e-07 )
+scale = Vector2( 2, 2.36364 )
+frames = ExtResource( 2 )
+
+[node name="Drop" parent="States" index="0"]
+DESPAWN_TIME = 10.0

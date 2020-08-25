@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Window/window.gd" type="Script" id=1]
+
+[sub_resource type="StyleBoxFlat" id=1]
+border_color = Color( 0.898039, 0, 0.14902, 1 )
+border_blend = true
+
+[node name="Window" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowContainer" type="PanelContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="WindowBackground" type="Panel" parent="WindowContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 1017.0
+margin_bottom = 593.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="WindowContainer/WindowBackground"]
+anchor_right = 1.0
+margin_bottom = 26.0
+custom_styles/normal = SubResource( 1 )
+text = "label"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="ClickLabelAlert" type="Control" parent="WindowContainer/WindowBackground/Label"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CloseButton" type="Button" parent="WindowContainer/WindowBackground/Label"]
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -25.9999
+margin_right = 6.10352e-05
+margin_bottom = 1.90735e-06
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+[connection signal="gui_input" from="WindowContainer" to="." method="_on_window_container_gui_input"]
+[connection signal="gui_input" from="WindowContainer/WindowBackground" to="." method="_on_window_background_gui_input"]
+[connection signal="gui_input" from="WindowContainer/WindowBackground/Label/ClickLabelAlert" to="." method="_on_click_label_alert_gui_input"]
+[connection signal="pressed" from="WindowContainer/WindowBackground/Label/CloseButton" to="." method="_on_close_button_pressed"]

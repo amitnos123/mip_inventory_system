@@ -1,0 +1,10 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Items/Item Test/Item Inventory Test/item_inventory_test.gd" type="Script" id=1]
+[ext_resource path="res://Items/Item Inventory/item_inventory.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Items/Item Test/Item Inventory Test/item_inventory_test.bmp" type="Texture" id=3]
+
+[node name="ItemInventoryTest" instance=ExtResource( 2 )]
+texture = ExtResource( 3 )
+expand = true
+script = ExtResource( 1 )

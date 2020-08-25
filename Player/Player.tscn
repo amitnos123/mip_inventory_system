@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Player/Player.gd" type="Script" id=1]
+[ext_resource path="res://Player/Player Sprite.bmp" type="Texture" id=2]
+[ext_resource path="res://Player/WindowsControler.gd" type="Script" id=3]
+[ext_resource path="res://Window/Inventory/window_inventory.tscn" type="PackedScene" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="WindowsControler" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowInventory" parent="WindowsControler" instance=ExtResource( 4 )]
+margin_left = 124.766
+margin_top = 151.178
+margin_right = 370.766
+margin_bottom = 341.178
+
+[node name="WindowInventory2" parent="WindowsControler" instance=ExtResource( 4 )]
+margin_left = 97.0
+margin_top = -128.0
+margin_right = 373.0
+margin_bottom = 77.0
+[connection signal="item_drop" from="WindowsControler/WindowInventory" to="." method="drop_item"]
+[connection signal="item_drop" from="WindowsControler/WindowInventory2" to="." method="drop_item"]

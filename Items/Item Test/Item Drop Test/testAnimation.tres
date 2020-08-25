@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=2]
+
+[ext_resource path="res://Items/Item Test/Item Drop Test/despawn.bmp" type="Texture" id=1]
+[ext_resource path="res://Items/Item Test/Item Drop Test/picked.bmp" type="Texture" id=2]
+[ext_resource path="res://Items/Item Test/Item Drop Test/drop.bmp" type="Texture" id=3]
+
+[resource]
+animations = [ {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "drop",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 2 ) ],
+"loop": true,
+"name": "picked",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "despawn",
+"speed": 5.0
+} ]
